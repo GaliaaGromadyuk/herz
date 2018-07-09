@@ -1,5 +1,28 @@
+// MAP
+function initMap() {
+  var uluru = {lat: 49.5684915, lng: 34.583184};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: uluru,
+    styles: [{
+        stylers: [{
+          saturation: -100
+        }]
+      }]
+  });
+  var image = '../img/marker.png';
+
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+    icon: image
+  });
+};
+
+
 $(document).ready(function(){
 
+// SLIDER
 	$('.slider').slick({
 		dots: true,
 		arrows: false,
@@ -11,10 +34,6 @@ $(document).ready(function(){
 		slidesToScroll: 1
 	});
 
-
-	$('.user__button').click(function(event) {
-		$('.login').slideToggle();
-	});
 
 // MODAL
 	$('.buy-click').click( function(event){
@@ -35,5 +54,125 @@ $(document).ready(function(){
 				}
 			);
 	});
+
+// login&registration
+	var registrationForm = '.registration__form';
+	var loginForm = '.login__form';
+
+	$('.registration__button').click( function(){
+		$(".login__form").css('display', 'none');
+		$(".registration__form").css('display', 'block');
+	});
+	$('.enter__button').click( function(){
+		$(".registration__form").css('display', 'none');
+		$(".login__form").css('display', 'block');
+	});
+	$('.user__button').click(function(event) {
+		$('.login').fadeToggle();
+	});
+	$('.submenu__item1').click(function(event) {
+		$('.submenu1').fadeToggle();
+	});
+
+
+
+// CART AMOUNT
+	function catalogItemCounter(field){
+
+				var fieldCount = function(el) {
+
+					var
+						min = el.data('min') || false,
+
+						max = el.data('max') || false,
+
+						dec = el.prev('.dec'),
+
+						inc = el.next('.inc');
+
+					function init(el) {
+						if(!el.attr('disabled')){
+							dec.on('click', decrement);
+							inc.on('click', increment);
+						}
+
+						function decrement() {
+							var value = parseInt(el[0].value);
+							value--;
+
+							if(!min || value >= min) {
+								el[0].value = value;
+							}
+						};
+
+						function increment() {
+							var value = parseInt(el[0].value);
+
+							value++;
+
+							if(!max || value <= max) {
+								el[0].value = value++;
+							}
+						};
+
+					}
+
+					el.each(function() {
+						init($(this));
+					});
+				};
+
+				$(field).each(function(){
+					fieldCount($(this));
+				});
+			}
+
+	catalogItemCounter('.fieldCount');
+
+// TABS
+
+	(function($) {
+	$(function() {
+
+	  $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+	    $(this)
+	      .addClass('active').siblings().removeClass('active')
+	      .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+	  });
+
+	});
+	})(jQuery);
+
+
+	$(".categories .tab-content ul li a").click(function(e) {
+	  e.preventDefault();
+	  $(".categories .tab-content ul li a").removeClass('active');
+	  $(this).addClass('active');
+	})
+
+	$(".pages div").click(function(e) {
+	  e.preventDefault();
+	  $(".pages div").removeClass('active');
+	  $(this).addClass('active');
+	})
+
+
+	$(function() {
+		var pull 	 = $('.sandwich');
+		menu 		   = $('.nav');
+		menuHeight	= menu.height();
+
+	    $(pull).on('click', function(e) {
+		    e.preventDefault();
+		    menu.slideToggle();
+	    });
+	    $(window).resize(function(){
+	    		var w = $(window).width();
+	    		if(w > 320 && menu.is(':hidden')) {
+	    			menu.removeAttr('style');
+	    		}
+	  	});
+	});
+
 
 });
