@@ -33,6 +33,16 @@ $(document).ready(function(){
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
+	$('.product__slider').slick({
+		dots: false,
+		arrows: true,
+		infinite: true,
+		// speed: 300,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	});
 
 
 // MODAL
@@ -54,6 +64,12 @@ $(document).ready(function(){
 				}
 			);
 	});
+	$.jMaskGlobals = {translation: {
+	               'n': {pattern: /\d/},
+	           }
+	       };
+	       $('.modal__phone').mask('+38(0nn)-nnn-nnnn').val('+38(0');
+	       $('.cart__input-telephont').mask('+38(0nn)-nnn-nnnn').val('+38(0');
 
 // login&registration
 	var registrationForm = '.registration__form';
@@ -170,6 +186,23 @@ $(document).ready(function(){
 	    		var w = $(window).width();
 	    		if(w > 320 && menu.is(':hidden')) {
 	    			menu.removeAttr('style');
+	    		}
+	  	});
+	});
+
+	$(function() {
+		var filter 	 = $('.filter');
+		categories 	= $('.categories__list');
+		categoriesHeight	= categories.height();
+
+	    $(filter).on('click', function(e) {
+		    e.preventDefault();
+		    categories.slideToggle();
+	    });
+	    $(window).resize(function(){
+	    		var w = $(window).width();
+	    		if(w > 320 && categories.is(':hidden')) {
+	    			categories.removeAttr('style');
 	    		}
 	  	});
 	});
