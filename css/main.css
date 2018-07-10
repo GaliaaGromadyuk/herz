@@ -526,6 +526,30 @@ select {
   .header__icons svg {
     margin-bottom: -7px; }
 
+.header .heart__icon {
+  position: relative; }
+  .header .heart__icon svg {
+    -webkit-transition: none;
+    transition: none; }
+  .header .heart__icon:hover {
+    background: #1f1f1f; }
+    .header .heart__icon:hover .header__easyview {
+      display: block; }
+    .header .heart__icon:hover .heart {
+      fill: #ffffff; }
+
+.header .shoping-cart {
+  position: relative; }
+  .header .shoping-cart svg {
+    -webkit-transition: none;
+    transition: none; }
+  .header .shoping-cart:hover {
+    background: #1f1f1f; }
+    .header .shoping-cart:hover .header__easyview {
+      display: block; }
+    .header .shoping-cart:hover .card {
+      fill: #ffffff; }
+
 .nav {
   background: #ed1b24; }
   .nav .col-auto {
@@ -623,6 +647,32 @@ select {
   letter-spacing: 2px; }
   .menu__item:hover {
     background: #1f1f1f; }
+
+.header__easyview {
+  font-weight: 700;
+  border-top: 6px solid #1f1f1f;
+  font-size: 1rem;
+  width: 13rem;
+  -webkit-box-shadow: 0px 0px 26.97px 2.03px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 0px 26.97px 2.03px rgba(0, 0, 0, 0.14);
+  padding: 0.8rem 1.2rem;
+  z-index: 999;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  background: white;
+  display: none; }
+  .header__easyview-item {
+    margin-bottom: 0.5rem;
+    border-top: 1px solid #efefef; }
+    .header__easyview-item img {
+      height: auto;
+      max-width: 4.5rem; }
+  .header__easyview-name {
+    font-size: 0.8rem;
+    font-weight: 400; }
+  .header__easyview input {
+    cursor: pointer; }
 
 .shoping-cart {
   position: relative;
@@ -957,6 +1007,26 @@ select {
 
 .tabs__content.active {
   display: block; }
+
+.account .login {
+  display: none !important; }
+
+.account .exit {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 3.55rem;
+  padding: 0.5rem;
+  background: #ffffff;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 26.97px 2.03px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 0px 26.97px 2.03px rgba(0, 0, 0, 0.14); }
+  .account .exit input {
+    cursor: pointer; }
 
 .account .p20 {
   -webkit-box-flex: 0;
@@ -2453,7 +2523,9 @@ select {
     height: 1.5rem;
     width: 1.8rem; }
   .cart img {
-    padding: 0; } }
+    padding: 0; }
+  .account .tabs .personal input, .account .tabs .personal select {
+    width: 25rem; } }
 
 @media only screen and (max-width: 767px) {
   html {
@@ -2620,7 +2692,13 @@ select {
   .account .tabs__caption li {
     width: auto; }
   .account .tabs__caption {
-    margin-right: 1rem; } }
+    margin-right: 1rem; }
+  .account .exit {
+    text-align: center;
+    top: 4.7rem; }
+    .account .exit .login__submit {
+      width: auto;
+      padding: 1rem 3rem; } }
 
 @media only screen and (max-device-width: 576px) {
   html {

@@ -89,7 +89,9 @@ $(document).ready(function(){
 	$('.submenu__item1').click(function(event) {
 		$('.submenu1').fadeToggle();
 	});
-
+	$('.account .user__button').click(function(event) {
+		$('.exit').fadeToggle();
+	});
 
 
 // CART AMOUNT
