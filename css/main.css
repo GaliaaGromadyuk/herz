@@ -648,6 +648,9 @@ select {
   .menu__item:hover {
     background: #1f1f1f; }
 
+.text-right {
+  text-align: right; }
+
 .header__easyview {
   font-weight: 700;
   border-top: 6px solid #1f1f1f;
@@ -668,6 +671,9 @@ select {
     .header__easyview-item img {
       height: auto;
       max-width: 4.5rem; }
+  .header__easyview-about input {
+    width: 2rem;
+    background: white; }
   .header__easyview-name {
     font-size: 0.8rem;
     font-weight: 400; }
