@@ -1,0 +1,185 @@
+@import 'vars'
+@import 'reset'
+@import 'fonts'
+
+*
+	box-sizing: border-box
+
+html
+	font-family: sans-serif
+	line-height: 1.15
+	-webkit-text-size-adjust: 100%
+	-ms-text-size-adjust: 100%
+	-ms-overflow-style: scrollbar
+	-webkit-tap-highlight-color: transparent
+	font-size: 20px
+	height: 100%
+
+body
+	background-color: $wh
+	color: $text
+	font-family: $font
+	margin: 0
+	padding: 0
+	font-weight: 400
+	line-height: 1.5
+	color: $text
+	text-align: left
+	overflow-x: hidden
+	height: 100%
+
+
+html,body
+	height: 100%
+
+.page
+	display: flex
+	flex-direction: column
+	height: 100%
+
+.content
+	flex: 1 0 auto
+
+.footer
+	flex: 0 0 auto
+
+
+
+a
+	text-decoration: none
+	color: $text
+
+img, iframe
+	max-width: 100%
+	height: auto
+
+ul
+	padding-left: 0
+	padding: 0
+	margin: 0
+	list-style-type: none
+
+fieldset
+	border: none
+	padding: 0px
+
+.text-center
+	text-align: center
+
+.upper
+	text-transform: uppercase
+
+
+.letter-s
+	letter-spacing: 4px
+
+.text
+	color: $text-s
+	line-height: 1.5
+
+.hidden
+	display: none
+
+
+.margin
+	&-30
+		margin-top: 30px
+		margin-bottom: 30px
+	&-b
+		&30
+			margin-bottom: 30px
+		&70
+			margin-bottom: 70px
+		&90
+			margin-bottom: 90px
+	&-t60
+		margin-top: 60px
+	&-row
+		margin-left: -15px
+		margin-right: -15px
+
+.padding
+	&-b30
+		padding-bottom: 30px
+	&-0
+		padding: 0
+	&-25
+		padding-top: 25px
+		padding-bottom: 25px
+
+.border-radius
+	border-radius: 50%
+
+
+.float-right
+	float: right
+.float-left
+	float: left
+
+.position-relative
+	position: relative
+
+
+.w
+	width: 100%
+
+.h
+	height: 100%
+
+.p60
+	flex: 0 0 calc(60% - 16px)
+	max-width: calc(60% - 16px)
+	position: relative
+    width: 100%
+    min-height: 1px
+
+.p20
+	flex: 0 0 calc(20% - 16px)
+	max-width: calc(20% - 16px)
+	position: relative
+    width: 100%
+    min-height: 1px
+
+
+.padding
+	padding: 0rem 6.75rem
+
+.slick
+	&-slider
+		padding-bottom: 30px
+	&-dots
+		position: absolute
+		list-style: none
+		display: block
+		right: 18%
+		padding: 0
+		margin: 0
+		margin-top: -4rem
+		li
+			position: relative
+			display: inline-block
+			// height: 20px
+			// width: 20px
+			margin: 0 5px
+			padding: 0
+			cursor: pointer
+			button
+				box-shadow: 0 0 0 2px $text-m
+				border: 2px solid transparent
+				background: transparent
+				display: block
+				height: 16px
+				width: 16px
+				outline: 0
+				line-height: 0
+				font-size: 0
+				padding: 5px
+				cursor: pointer
+				border-radius: 50%
+			&.slick-active
+				button
+					background-color: $text-m
+					border: 2px solid $wh
+
+
+

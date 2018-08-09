@@ -26,22 +26,32 @@ $(document).ready(function(){
 	$('.slider').slick({
 		dots: true,
 		arrows: false,
-		infinite: true,
-		// speed: 300,
+		// infinite: true,
+		speed: 500,
 		autoplay: true,
 		autoplaySpeed: 4000,
 		slidesToShow: 1,
-		slidesToScroll: 1
+		slidesToScroll: 1,
+		infinite: true,
+		fade: true,
+		pauseOnFocus: false, 
+		pauseOnHover: false
 	});
 	$('.product__slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 5000,
 		dots: false,
 		arrows: true,
 		infinite: true,
-		// speed: 300,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		slidesToShow: 1,
-		slidesToScroll: 1,
+		fade: true,
+		// infinite: true,
+		speed: 500,
+		pauseOnFocus: false, 
+		pauseOnHover: false
+		
+		
 	});
 
 
